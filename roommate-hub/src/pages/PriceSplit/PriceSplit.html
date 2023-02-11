@@ -9,7 +9,7 @@
     <h1>Enter Items</h1>
 
     <script>
-      import { Item } from "../components/item.jsx";
+      import { Item } from "../../components/Item.jsx";
       //import from Item
 
       function addToTable() {
@@ -18,8 +18,9 @@
         var table = document.getElementById("ingredientsTable");
         var row = table.insertRow(1);
 
-        var ingredientCell = row.insertCell(0);
+        var nameCell = row.insertCell(0);
         var quantityCell = row.insertCell(1);
+        var
 
         ingredientCell.innerHTML = document.getElementById("addItem").value;
         quantityCell.innerHTML = document.getElementById("addQuantity").value;
