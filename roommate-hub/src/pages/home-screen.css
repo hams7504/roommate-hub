@@ -1,0 +1,48 @@
+.screen a {
+    display: contents;
+    text-decoration: none;
+}
+
+.container-center-horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    pointer-events: none;
+    width: 100%;
+}
+
+.container-center-horizontal > * {
+    flex-shrink: 0;
+    pointer-events: auto;
+}
+
+.landing-page {
+    align-items: flex-start;
+    background-color: var(--sprout);
+    border: 1px none;
+    display: flex;
+    gap: 36px;
+    width: 1440px;
+}
+
+.roommate-hub {
+    height: 62px;
+    margin-left: 30px;
+    margin-top: 49.72 px;
+    width: 166px;
+}
+
+.overlap-group {
+    align-items: flex-start;
+    background-color: var(--double-spanish-white);
+    border-radius: 90 px 0px 0px 90px;
+    display: flex;
+    gap: 75px;
+    height: 1024px;
+    min-width: 1208px;
+}
+
+.overlap-group1 {
+    align-items: flex-start;
+    background-color: var(--quarter-spanish);
+}
