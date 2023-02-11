@@ -1,4 +1,5 @@
-import {Row, Col, Button, Icon, Tooltip} from 'antd';
+import {Row, Col, Button, Tooltip} from 'antd';
+import Icon from '@ant-design/icons';
 import React from 'react';
 import {
   toolbar,
