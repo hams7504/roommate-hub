@@ -27,6 +27,7 @@ import { Calendar } from '../pages/Calendar';
 import { Contacts } from '../pages/Contacts';
 import Orders from './Orders';
 
+
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -41,6 +42,26 @@ function Copyright(props) {
 }
 
 const drawerWidth = 240;
+
+import * as React from 'react';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { purple } from '@mui/material/colors';
+import Button from '@mui/material/Button';
+
+import { makeStyles } from "@material-ui/core/styles";
+
+
+
+
+
+export default function Palette() {
+  return (
+    <ThemeProvider theme={theme}>
+      <Button>Primary</Button>
+      <Button color="secondary">Secondary</Button>
+    </ThemeProvider>
+  );
+}
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
@@ -167,7 +188,7 @@ function DashboardContent() {
                 noWrap
                 sx={{ flexGrow: 1 }}
               >
-                hello, ashley!
+                hello, ashley! hi
               </Typography>
               <Stack direction="row" spacing={3}>
                 <Stack direction="column" spacing={3}>

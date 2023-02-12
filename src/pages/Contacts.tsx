@@ -86,15 +86,15 @@ export const Contacts = () => {
       >
         <MenuItem onClick={handleClose} disableRipple>
           <EditIcon />
-          Edit
+          Name
         </MenuItem>
         <MenuItem onClick={handleClose} disableRipple>
           <FileCopyIcon />
-          Duplicate
+          Phone
         </MenuItem>
         <MenuItem onClick={handleClose} disableRipple>
           <ArchiveIcon />
-          Archive
+          Email
         </MenuItem>
         <MenuItem onClick={handleClose} disableRipple>
           <MoreHorizIcon />
