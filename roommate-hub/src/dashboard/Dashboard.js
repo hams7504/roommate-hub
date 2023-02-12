@@ -117,6 +117,7 @@ function DashboardContent() {
           <Toolbar
             sx={{
               pr: '12px', // keep right padding when drawer closed
+              backgroundColor: "#B56745"
             }}
           >
             <IconButton
@@ -142,12 +143,13 @@ function DashboardContent() {
             </Typography>
           </Toolbar>
         </AppBar>
-        <Drawer variant="permanent" open={open}>
+        <Drawer variant="permanent" open={open} sx={{backgroundColor: "#C3D8AE",}}>
           <Toolbar
             sx={{
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'flex-end',
+              backgroundColor: "#C3D8AE",
               px: [1],
             }}
           >
@@ -156,7 +158,7 @@ function DashboardContent() {
             </IconButton>
           </Toolbar>
           <Divider />
-          <List component="nav">
+          <List component="nav" sx={{backgroundColor: "#C3D8AE"}}>
             {mainListItems}
           </List>
         </Drawer>
@@ -165,7 +167,7 @@ function DashboardContent() {
           sx={{
             backgroundColor: (theme) =>
               theme.palette.mode === 'light'
-                ? theme.palette.grey[100]
+                ? "#F7EFDC"
                 : theme.palette.grey[900],
             flexGrow: 1,
             height: '100vh',
@@ -177,7 +179,7 @@ function DashboardContent() {
             <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
               <Typography
                 component="h1"
-                variant="h6"
+                variant="h1"
                 color="inherit"
                 noWrap
                 sx={{ flexGrow: 1 }}
@@ -236,7 +238,7 @@ function DashboardContent() {
                           p: 2,
                           display: 'flex',
                           flexDirection: 'column',
-                          height: 240,
+                      
                         }}
                       >
                         <Images />

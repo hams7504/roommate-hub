@@ -1,11 +1,12 @@
 import './HomePage.css';
 import React from 'react';
+import Image from "./sprites.jpg"
 
 export const Images = () => {
 
     return (
         <div>
-            <h1>Images go here</h1>
+            <img src={Image}/>
         </div>
     )
 }
