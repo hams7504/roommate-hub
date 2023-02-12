@@ -69,6 +69,21 @@ class EventHighlighter extends Component {
     });
   };
 
+
+  getColorChange() {
+    console.log("this is event type", this.props.category);
+    let color;
+    if (this.props.category === "chores") {
+      color = "#ADCEF2";
+    } else if (this.props.category === "quiet hours") {
+      color = "#3562A6";
+    } else  {
+      color = "#C3D8AE";
+    }
+    return color;
+    // set the color for the timeblock using the color variable
+  }
+
   render () {
     const {showEditEventModal, eventNewStart, eventNewEnd} = this.state;
     return (
@@ -76,13 +91,14 @@ class EventHighlighter extends Component {
         <AddEventModal
           editMode={true}
           eventTitle={this.props.event.title}
-          visible={showEditEventModal}
+          open={showEditEventModal}
           onCancel={this.deleteEvent}
           onClose={this.closeModal}
           onOk={this.updateEvent}
           eventStart={eventNewStart}
           eventEnd={eventNewEnd}
           onTimeChange={this.onCurrentEventTimeChange}
+          onCategoryChange={this.props.onCategoryChange}
         />
         <div
           onClick={this.openEditEventModal}
@@ -92,6 +108,7 @@ class EventHighlighter extends Component {
               this.props.startDate
             ),
             ...eventHighlighter,
+            backgroundColor: this.getColorChange()
           }}
         >
           {this.props.event.title} <br />

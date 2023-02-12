@@ -42,9 +42,10 @@ class AddEventModal extends Component {
 
   render () {
     const {title} = this.state;
+    
     return (
       <Modal
-        visible={this.props.visible}
+        open={this.props.open}
         onOk={this.handleOk}
         onCancel={this.props.onClose}
         footer={[
@@ -62,6 +63,7 @@ class AddEventModal extends Component {
           start={this.props.eventStart}
           end={this.props.eventEnd}
           onTimeChange={this.props.onTimeChange}
+          onCategoryChange={this.props.onCategoryChange}
         />
       </Modal>
     );

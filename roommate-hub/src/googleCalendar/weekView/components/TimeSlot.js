@@ -14,6 +14,7 @@ function TimeSlot (props) {
       }
       span={3}
       onClick={() => props.openAddEventModal (props.dateStamp, props.time)}
+      
     />
   );
 }

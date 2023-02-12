@@ -17,10 +17,12 @@ export const container = {
   paddingRight: '10em',
   paddingTop: '2em',
   paddingBottom: '2em',
+  // width: '60em',
+  // height: '30em'
 };
 
 export const weekDates = {
-  fontSize: 40,
+  fontSize: 30,
   lineHeight: '12px',
   color: '#9e9e9e',
   marginLeft: 10,
@@ -70,7 +72,7 @@ export const alignRight = {
 };
 
 export const spacify = {
-  marginRight: 5,
+  marginRight: 550,
 };
 
 export const inputStyles = {
@@ -88,9 +90,12 @@ export const lightHighlighter = {
   backgroundColor: 'rgba(0,0,0,0.04)',
 };
 
+// export const eventStyles = {
+//   color: colorChange === "1" ? "red" : colorChange === "2" ? "blue" : "green",
+// };
+
 export const eventHighlighter = {
   position: 'absolute',
-  backgroundColor: '#b3e1f7',
   border: '1px solid #81cdf2',
   borderRadius: '4px',
   color: 'white',

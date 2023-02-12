@@ -15,6 +15,7 @@ class WeekView extends Component {
     showAddEventModal: false,
     eventStart: null,
     eventEnd: null,
+    category: null
   };
 
   /**
@@ -83,6 +84,7 @@ class WeekView extends Component {
       title,
       start: this.state.eventStart,
       end: this.state.eventEnd,
+      category: this.state.category,
     });
     this.setState ({
       showAddEventModal: false,
@@ -100,6 +102,12 @@ class WeekView extends Component {
     });
   };
 
+  onCategoryChange = e => {
+    this.setState ({
+      category: e
+    });
+  }
+
   render () {
     const {
       weekDays,
@@ -113,13 +121,14 @@ class WeekView extends Component {
       <div style={container}>
 
         <AddEventModal
-          visible={showAddEventModal}
+          open={showAddEventModal}
           onCancel={this.onCloseAddEventModal}
           onClose={this.onCloseAddEventModal}
           onOk={this.onOkAddEventModal}
           eventStart={eventStart}
           eventEnd={eventEnd}
           onTimeChange={this.onCurrentEventTimeChange}
+          onCategoryChange={this.onCategoryChange}
         />
 
         <WeekToolbar
@@ -150,6 +159,8 @@ class WeekView extends Component {
                     key={event.title + event.end + event.start}
                     startDate={startDate}
                     event={event}
+                    onCategoryChange={this.onCategoryChange}
+                    category={event.category}
                   />
               )}
           </TimeSlotGroup>

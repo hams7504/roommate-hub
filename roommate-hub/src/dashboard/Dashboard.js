@@ -23,7 +23,7 @@ import Chart from './Chart';
 import { PriceSplit } from '../pages/PriceSplit';
 import { Images } from '../pages/Images';
 import { Playlist } from '../pages/Playlist'
-import { Calendar } from '../pages/Calendar';
+import GoogleCalendar from '../googleCalendar/GoogleCalendar';
 import { Contacts } from '../pages/Contacts';
 import Orders from './Orders';
 
@@ -182,7 +182,7 @@ function DashboardContent() {
                 noWrap
                 sx={{ flexGrow: 1 }}
               >
-                hello, ashley! hi
+                hello, ashley!
               </Typography>
               <Stack direction="row" spacing={3}>
                 <Stack direction="column" spacing={3}>
@@ -197,7 +197,7 @@ function DashboardContent() {
                               width: 650,
                             }}
                       >
-                        <Calendar />
+                        <GoogleCalendar />
                       </Paper>
                     </Grid>
                     <Grid item xs={12}>
