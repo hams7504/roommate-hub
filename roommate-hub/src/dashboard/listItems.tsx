@@ -3,10 +3,9 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import ListSubheader from '@mui/material/ListSubheader';
-import HomeIcon from '@mui/icons-material/Home';
-import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-import ContactsIcon from '@mui/icons-material/Contacts';
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import PeopleIcon from '@mui/icons-material/People';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import LayersIcon from '@mui/icons-material/Layers';
 import AssignmentIcon from '@mui/icons-material/Assignment';
@@ -16,27 +15,59 @@ export const mainListItems = (
   <React.Fragment>
     <ListItemButton component = {RouterLink} to={"/"}>
       <ListItemIcon>
-        <HomeIcon />
+        <DashboardIcon />
       </ListItemIcon>
-      <ListItemText primary="Home" />
+      <ListItemText primary="Dashboard" />
     </ListItemButton>
     <ListItemButton component = {RouterLink} to = {"/finances"}>
       <ListItemIcon>
-        <AttachMoneyIcon />
+        <ShoppingCartIcon />
       </ListItemIcon>
-      <ListItemText primary="Finances" />
+      <ListItemText primary="Orders" />
     </ListItemButton>
     <ListItemButton component = {RouterLink} to = {"/calendar"}>
       <ListItemIcon>
-        <CalendarMonthIcon />
+        <PeopleIcon />
       </ListItemIcon>
-      <ListItemText primary="Calendar" />
+      <ListItemText primary="Customers" />
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
-        <ContactsIcon />
+        <BarChartIcon />
       </ListItemIcon>
-      <ListItemText primary="Contacts" />
+      <ListItemText primary="Reports" />
+    </ListItemButton>
+    <ListItemButton>
+      <ListItemIcon>
+        <LayersIcon />
+      </ListItemIcon>
+      <ListItemText primary="Integrations" />
+    </ListItemButton>
+  </React.Fragment>
+);
+
+export const secondaryListItems = (
+  <React.Fragment>
+    <ListSubheader component="div" inset>
+      Saved reports
+    </ListSubheader>
+    <ListItemButton>
+      <ListItemIcon>
+        <AssignmentIcon />
+      </ListItemIcon>
+      <ListItemText primary="Current month" />
+    </ListItemButton>
+    <ListItemButton>
+      <ListItemIcon>
+        <AssignmentIcon />
+      </ListItemIcon>
+      <ListItemText primary="Last quarter" />
+    </ListItemButton>
+    <ListItemButton>
+      <ListItemIcon>
+        <AssignmentIcon />
+      </ListItemIcon>
+      <ListItemText primary="Year-end sale" />
     </ListItemButton>
   </React.Fragment>
 );
