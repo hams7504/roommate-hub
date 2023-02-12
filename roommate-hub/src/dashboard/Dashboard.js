@@ -18,7 +18,7 @@ import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { mainListItems, secondaryListItems } from './listItems';
+import { mainListItems } from './listItems';
 import Chart from './Chart';
 import { PriceSplit } from '../pages/PriceSplit';
 import { Images } from '../pages/Images';
@@ -26,6 +26,7 @@ import { Playlist } from '../pages/Playlist'
 import { Calendar } from '../pages/Calendar';
 import { Contacts } from '../pages/Contacts';
 import Orders from './Orders';
+
 
 function Copyright(props) {
   return (
@@ -41,6 +42,20 @@ function Copyright(props) {
 }
 
 const drawerWidth = 240;
+
+
+
+
+
+
+// export default function Palette() {
+//   return (
+//     <ThemeProvider theme={theme}>
+//       <Button>Primary</Button>
+//       <Button color="secondary">Secondary</Button>
+//     </ThemeProvider>
+//   );
+// }
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
@@ -101,7 +116,7 @@ function DashboardContent() {
         <AppBar position="absolute" open={open}>
           <Toolbar
             sx={{
-              pr: '24px', // keep right padding when drawer closed
+              pr: '12px', // keep right padding when drawer closed
             }}
           >
             <IconButton
@@ -123,13 +138,8 @@ function DashboardContent() {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              Dashboard
+              Roommate Hub
             </Typography>
-            <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
           </Toolbar>
         </AppBar>
         <Drawer variant="permanent" open={open}>
@@ -148,8 +158,6 @@ function DashboardContent() {
           <Divider />
           <List component="nav">
             {mainListItems}
-            <Divider sx={{ my: 1 }} />
-            {secondaryListItems}
           </List>
         </Drawer>
         <Box
@@ -165,7 +173,6 @@ function DashboardContent() {
           }}
         >
           <Toolbar />
-<<<<<<< HEAD
           <Container>
             <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
               <Typography
@@ -175,7 +182,7 @@ function DashboardContent() {
                 noWrap
                 sx={{ flexGrow: 1 }}
               >
-                hello, ashley!
+                hello, ashley! hi
               </Typography>
               <Stack direction="row" spacing={3}>
                 <Stack direction="column" spacing={3}>
@@ -254,44 +261,6 @@ function DashboardContent() {
 
               
             </Container>
-=======
-          <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-            <Grid container spacing={3}>
-              {/* Chart */}
-              <Grid item xs={12} md={8} lg={9}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 240,
-                  }}
-                >
-                  <Chart />
-                </Paper>
-              </Grid>
-              {/* Recent Deposits */}
-              <Grid item xs={12} md={4} lg={3}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 240,
-                  }}
-                >
-                  <Deposits />
-                </Paper>
-              </Grid>
-              {/* Recent Orders */}
-              <Grid item xs={12}>
-                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                  <Orders />
-                </Paper>
-              </Grid>
-            </Grid>
-            <Copyright sx={{ pt: 4 }} />
->>>>>>> parent of bce07d21 (typescript)
           </Container>
         </Box>
       </Box>

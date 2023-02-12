@@ -2,18 +2,19 @@ import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route}
     from 'react-router-dom';
-import {PriceSplit} from "./pages/PriceSplitNav";
+import {PriceSplit} from "./pages/PriceSplit";
 import Dashboard from "./dashboard/Dashboard";
-import { BrowserRouter } from 'react-router-dom'
-import { PriceSplit } from "./pages/PriceSplit";
-import { HomePage } from "./pages/HomePage";
 
 function App() {
   return (
-      <div className="wrapper">
-        <HomePage />
-        <PriceSplit />
+    <Router>
+      <div>
+      <Routes>
+            <Route path = '/finances' element = {<PriceSplit />} />
+           <Route exact path ='/' element = {<Dashboard />} />
+      </Routes>
       </div>
+    </Router>
   );
 }
 

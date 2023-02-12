@@ -3,6 +3,8 @@ import { useTheme } from '@mui/material/styles';
 import { LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer } from 'recharts';
 import Title from './Title';
 
+//hi
+
 // Generate Sales Data
 function createData(time: string, amount?: number) {
   return { time, amount };
