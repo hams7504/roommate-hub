@@ -2,11 +2,11 @@
 
 #navbar {
     height: 64px;
-    background-color: #56805c;
+    background-color: #000000;
 }
 
 #contents   {
-    background-color: #B0AAAA;
+    background-color: #F1BFAA;
     display: flex;
     flex-direction: column;
     height: 100%
@@ -22,7 +22,7 @@
 }
 
 #header {
-    background-color: #D9D9D9;
+    background-color: #F7EFDC;
     color: white;
     padding: 16px;
     padding-left: 32px;
@@ -40,7 +40,7 @@ h1 {
 }
 
 th  {
-    background-color: #D9D9D9;
+    background-color: #F7EFDC;
     color: #696969;
     justify-content: center;
     font-size: larger;
@@ -73,6 +73,7 @@ th  {
 }
 
 .existing-items  {
-    background-color: #D9D9D9;
+    background-color: #F1BFAA;
     justify-content: center;
+    align-self: center;
 }

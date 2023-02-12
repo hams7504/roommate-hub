@@ -1,4 +1,5 @@
 import React from 'react';
+import '../pages/PriceSplit.css'
 export function IngredientItem(props)   {
 
     return (
@@ -13,7 +14,7 @@ export function IngredientItem(props)   {
                         ${props.price} 
                     </td>
                     <td className="flexbox rowitem">
-                        <button id="claimItem" onClick={props.handleClaim}>Claim!</button>
+                        <button className='flexbox rowitem' id="claimItem" onClick={props.handleClaim}>Claim!</button>
                     </td>
                 </tr>
     )
