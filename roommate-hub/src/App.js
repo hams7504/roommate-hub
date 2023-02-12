@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route}
     from 'react-router-dom';
-import {PriceSplit} from "./pages/PriceSplit";
+import {PriceSplit} from "./pages/PriceSplitNav";
 import Dashboard from "./dashboard/Dashboard";
 
 function App() {
