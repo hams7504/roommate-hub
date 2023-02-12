@@ -43,25 +43,19 @@ function Copyright(props) {
 
 const drawerWidth = 240;
 
-import * as React from 'react';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { purple } from '@mui/material/colors';
-import Button from '@mui/material/Button';
-
-import { makeStyles } from "@material-ui/core/styles";
 
 
 
 
 
-export default function Palette() {
-  return (
-    <ThemeProvider theme={theme}>
-      <Button>Primary</Button>
-      <Button color="secondary">Secondary</Button>
-    </ThemeProvider>
-  );
-}
+// export default function Palette() {
+//   return (
+//     <ThemeProvider theme={theme}>
+//       <Button>Primary</Button>
+//       <Button color="secondary">Secondary</Button>
+//     </ThemeProvider>
+//   );
+// }
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
