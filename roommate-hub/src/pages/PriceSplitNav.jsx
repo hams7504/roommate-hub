@@ -24,10 +24,10 @@ import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { Images } from '../pages/Images';
-import { Playlist } from '../pages/Playlist'
-import { Calendar } from '../pages/Calendar';
-import { Contacts } from '../pages/Contacts';
+import { Images } from './Images';
+import { Playlist } from './Playlist'
+import { Calendar } from './Calendar';
+import { Contacts } from './Contacts';
 
 
 export const PriceSplit = () => {
@@ -115,6 +115,9 @@ export const PriceSplit = () => {
                 <div id="header">
                     <h1>Ingredients</h1>
                 </div>
+                <List component="nav">
+            {mainListItems}
+          </List>
 
                 <table id="ingredientsTable" className='tablerow'>
                     <tbody className='flexbox colbox'>

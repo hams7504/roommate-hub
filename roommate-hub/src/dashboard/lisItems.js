@@ -9,23 +9,22 @@ import PeopleIcon from '@mui/icons-material/People';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import LayersIcon from '@mui/icons-material/Layers';
 import AssignmentIcon from '@mui/icons-material/Assignment';
-import {Link as RouterLink} from 'react-router-dom'
 
 export const mainListItems = (
   <React.Fragment>
-    <ListItemButton component = {RouterLink} to={"/"}>
+    <ListItemButton>
       <ListItemIcon>
         <DashboardIcon />
       </ListItemIcon>
       <ListItemText primary="Dashboard" />
     </ListItemButton>
-    <ListItemButton component = {RouterLink} to = {"/finances"}>
+    <ListItemButton>
       <ListItemIcon>
         <ShoppingCartIcon />
       </ListItemIcon>
       <ListItemText primary="Orders" />
     </ListItemButton>
-    <ListItemButton component = {RouterLink} to = {"/calendar"}>
+    <ListItemButton>
       <ListItemIcon>
         <PeopleIcon />
       </ListItemIcon>
