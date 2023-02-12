@@ -1,27 +1,28 @@
-import './Style.css'
 import { useState } from "react";
 import { IngredientItem } from "../components/IngredientItem";
 import { ingredients } from "../constants/Ingredients";
-import logo from '../images/logo.jpeg';
+import './PriceSplit.css'
+import React from 'react';
 
 
-
-
-export const IngredientsPage = () => {
+export const PriceSplit = () => {
     const [ingredient, setIngredient] = useState("");
     const [quantity, setQuantity] = useState(0);
+    const [price, setPrice] = useState(0);
     const [listIngredients, setListIngredients] = useState(ingredients);
-
-
+    const [listClaimedItems, setClaimedItems] = useState([]);
+    const [balance, setBalance] = useState(0); 
 
     function addToTable() {
         const name = ingredient
         const num = parseInt(quantity)
+        const priceNum = parseInt(price)
         setListIngredients((prevState) => {
-            return [...prevState, { name: name, quantity: num }]
+            return [...prevState, { name: name, quantity: num, price: priceNum }]
         })
         setIngredient("");
         setQuantity(0);
+        setPrice(0);
     }
 
     function handleChangeIngredient(event) {
@@ -30,6 +31,26 @@ export const IngredientsPage = () => {
 
     function handleChangeQuantity(event) {
         setQuantity(event.target.value)
+    }
+
+    function handleChangePrice(event) {
+        setPrice(event.target.value)
+    }
+
+    const handleClaim = (name, price) => {
+        if (!listClaimedItems.includes(name)) {
+            listClaimedItems.push(name);
+            setClaimedItems(listClaimedItems);
+            setBalance(balance + price);
+        }
+        else {
+            console.log(listClaimedItems);
+            const filteredList = listClaimedItems.filter(function(item) {
+                return item !== name
+            });
+            setClaimedItems(filteredList);
+            setBalance(balance - price);
+        }
     }
 
     const handleAddAmount = (name) => {
@@ -67,7 +88,6 @@ export const IngredientsPage = () => {
     return (
         <div id="outer">
             <div id="navbar" >
-                <img src={logo} id='logo' />
             </div>
             <div id="contents">
                 <div id="header">
@@ -80,21 +100,26 @@ export const IngredientsPage = () => {
                         <tr className='flexbox'>
                             <th className='flexbox rowitem' >Ingredients</th>
                             <th className='flexbox rowitem'>Quantity</th>
+                            <th className='flexbox rowitem'>Price</th>
                             <td className='flexbox rowitem'></td>
                         </tr>
                         {
-                            listIngredients.map(({ name, quantity }, idx) => {
-                                return <IngredientItem key={idx} name={name} amount={quantity} handleAddAmount={() => handleAddAmount(name)} handleSubtractAmount={() => handleSubtractAmount(name)} />
+                            listIngredients.map(({ name, quantity, price }, idx) => {
+                                return <IngredientItem key={idx} name={name} amount={quantity} price={price} handleAddAmount={() => handleAddAmount(name)} handleSubtractAmount={() => handleSubtractAmount(name)} handleClaim={() => handleClaim(name, price)} />
                             })
                         }
                  
                             <tr className='flexbox'>
                                 <td className="flexbox">
-                                    <input className='flexbox rowitem' type="text" id="addItem" name="addItem" placeholder="enter ingredient" value={ingredient} onChange={handleChangeIngredient} />
+                                    <input className='flexbox rowitem' type="text" id="addItem" name="addItem" placeholder="enter item" value={ingredient} onChange={handleChangeIngredient} />
 
                                 </td>
                                 <td className="flexbox">
                                     <input className='flexbox rowitem' type="text" id="addQuantity" name="addItem" placeholder="enter quantity" value={(quantity === 0) ? '' : quantity} onChange={handleChangeQuantity} />
+
+                                </td>
+                                <td className="flexbox">
+                                    <input className='flexbox rowitem' type="text" id="addPrice" name="addPrice" placeholder="enter price" value={(price === 0) ? '' : price} onChange={handleChangePrice} />
 
                                 </td>
                                 <td className="flexbox ">
@@ -108,6 +133,11 @@ export const IngredientsPage = () => {
 
 
                 </table>
+
+             <div> 
+                <h1> Balance: ${balance} </h1>
+             
+             </div>
 
 
 

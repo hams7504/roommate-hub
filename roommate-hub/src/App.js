@@ -1,14 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import GoogleCalendar from './googleCalendar';
-import MyComponent from './components';
+import { BrowserRouter } from 'react-router-dom'
+import { PriceSplit } from "./pages/PriceSplit";
+import { HomePage } from "./pages/HomePage";
 
 function App() {
   return (
-      <div>
-        <MyComponent />
-        <GoogleCalendar />
+      <div className="wrapper">
+        <HomePage />
+        <PriceSplit />
       </div>
   );
 }
