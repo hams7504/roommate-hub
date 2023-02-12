@@ -59,7 +59,6 @@ export const PriceSplit = () => {
             if (item.name === name) {
                 console.log(item.quantity)
                 copyList[idx] = { name: item.name, quantity: item.quantity + 1 }
-
             }
         });
         setListIngredients(copyList)
