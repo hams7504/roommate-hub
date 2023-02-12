@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import Stack from '@mui/material/Stack';
 import MuiDrawer from '@mui/material/Drawer';
 import Box from '@mui/material/Box';
 import MuiAppBar from '@mui/material/AppBar';
@@ -21,7 +22,9 @@ import { mainListItems } from './listItems';
 import Chart from './Chart';
 import { PriceSplit } from '../pages/PriceSplit';
 import { Images } from '../pages/Images';
+import { Playlist } from '../pages/Playlist'
 import { Calendar } from '../pages/Calendar';
+import { Contacts } from '../pages/Contacts';
 import Orders from './Orders';
 
 function Copyright(props) {
@@ -158,71 +161,90 @@ function DashboardContent() {
           <Container>
             <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
               <Typography
-                    component="h1"
-                    variant="h6"
-                    color="inherit"
-                    noWrap
-                    sx={{ flexGrow: 1 }}
-                  >
-                    hello, ashley!
+                component="h1"
+                variant="h6"
+                color="inherit"
+                noWrap
+                sx={{ flexGrow: 1 }}
+              >
+                hello, ashley!
               </Typography>
-              <Grid container spacing={3}>
-                {/* Chart */}
-                <Grid item xs={12} md={8} lg={9}>
-                  <Paper
-                    style={{maxheight: '100%', overflow: 'auto'}}
-                    sx={{
-                      p: 2,
-                      display: 'flex',
-                      flexDirection: 'column',
-                      height: 300,
-                      width: 600,
-                    }}
-                  >
-                    <PriceSplit />
-                  </Paper>
-                </Grid>
-                {/* Recent Deposits */}
-                <Grid item xs={10} md={4} lg={3}>
-                  <Paper
-                    sx={{
-                      p: 2,
-                      display: 'flex',
-                      flexDirection: 'column',
-                      height: 240,
-                    }}
-                  >
-                    <Images />
-                  </Paper>
-                </Grid>
-                {/* Recent Orders */}
-                <Grid item xs={12}>
-                  <Paper 
-                    style={{maxheight: '100%', overflow: 'auto'}}
-                    sx={{ p: 2,
-                          display: 'flex', 
-                          flexDirection: 'row',
-                          height: 200,
-                          width: 700,
+              <Stack direction="row" spacing={3}>
+                <Stack direction="column" spacing={3}>
+                  <Stack direction="row" spacing={3}>
+                    <Grid item xs={12}>
+                      <Paper 
+                        style={{maxheight: '100%', overflow: 'auto'}}
+                        sx={{ p: 2,
+                              display: 'flex', 
+                              flexDirection: 'row',
+                              height: 400,
+                              width: 650,
+                            }}
+                      >
+                        <Calendar />
+                      </Paper>
+                    </Grid>
+                    <Grid item xs={12}>
+                      <Paper 
+                        style={{maxheight: '100%', overflow: 'auto'}}
+                        sx={{ p: 2,
+                              display: 'flex', 
+                              flexDirection: 'row',
+                              height: 400,
+                              width: 200,
+                            }}
+                      >
+                        <Contacts />
+                      </Paper>
+                    </Grid>
+                  </Stack>
+                  <Grid item xs={12} md={8} lg={9}>
+                    <Paper
+                      style={{maxheight: '100%', overflow: 'auto'}}
+                      sx={{
+                        p: 2,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        height: 650,
+                        width: 850,
+                      }}
+                    >
+                      <PriceSplit />
+                    </Paper>
+                  </Grid>
+                </Stack>
+                <Stack direction="column" spacing={3}>
+                  <Grid item xs={10} md={4} lg={3}>
+                      <Paper
+                        sx={{
+                          p: 2,
+                          display: 'flex',
+                          flexDirection: 'column',
+                          height: 240,
                         }}
-                  >
-                    <Calendar />
-                  </Paper>
-                </Grid>
-              </Grid>
-            </Container>
-            <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-              <Paper 
-                    style={{maxheight: '100%', overflow: 'auto'}}
-                    sx={{ p: 2,
-                          display: 'flex', 
-                          flexDirection: 'row',
-                          height: 200,
-                          width: 700,
+                      >
+                        <Images />
+                      </Paper>
+                  </Grid>
+                  <Grid item xs={10} md={4} lg={3}>
+                      <Paper
+                        sx={{
+                          p: 2,
+                          display: 'flex',
+                          flexDirection: 'column',
+                          width: 350,
+                          height: 400,
                         }}
-                >
-                  <Calendar />
-                </Paper>
+                      >
+                        <Playlist />
+                      </Paper>
+                  </Grid>
+                </Stack>
+              </Stack>
+              
+
+              
             </Container>
           </Container>
         </Box>
