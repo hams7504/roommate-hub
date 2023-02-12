@@ -155,51 +155,75 @@ function DashboardContent() {
           }}
         >
           <Toolbar />
-          
-          <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-            <Typography
-                  component="h1"
-                  variant="h6"
-                  color="inherit"
-                  noWrap
-                  sx={{ flexGrow: 1 }}
-                >
-                  hello, ashley!
-            </Typography>
-            <Grid container spacing={3}>
-              {/* Chart */}
-              <Grid item xs={12} md={8} lg={9}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 240,
-                  }}
-                >
-                  <PriceSplit />
-                </Paper>
+          <Container>
+            <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+              <Typography
+                    component="h1"
+                    variant="h6"
+                    color="inherit"
+                    noWrap
+                    sx={{ flexGrow: 1 }}
+                  >
+                    hello, ashley!
+              </Typography>
+              <Grid container spacing={3}>
+                {/* Chart */}
+                <Grid item xs={12} md={8} lg={9}>
+                  <Paper
+                    style={{maxheight: '100%', overflow: 'auto'}}
+                    sx={{
+                      p: 2,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      height: 300,
+                      width: 600,
+                    }}
+                  >
+                    <PriceSplit />
+                  </Paper>
+                </Grid>
+                {/* Recent Deposits */}
+                <Grid item xs={10} md={4} lg={3}>
+                  <Paper
+                    sx={{
+                      p: 2,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      height: 240,
+                    }}
+                  >
+                    <Images />
+                  </Paper>
+                </Grid>
+                {/* Recent Orders */}
+                <Grid item xs={12}>
+                  <Paper 
+                    style={{maxheight: '100%', overflow: 'auto'}}
+                    sx={{ p: 2,
+                          display: 'flex', 
+                          flexDirection: 'row',
+                          height: 200,
+                          width: 700,
+                        }}
+                  >
+                    <Calendar />
+                  </Paper>
+                </Grid>
               </Grid>
-              {/* Recent Deposits */}
-              <Grid item xs={10} md={4} lg={3}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 240,
-                  }}
+            </Container>
+            <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+              <Paper 
+                    style={{maxheight: '100%', overflow: 'auto'}}
+                    sx={{ p: 2,
+                          display: 'flex', 
+                          flexDirection: 'row',
+                          height: 200,
+                          width: 700,
+                        }}
                 >
-                  <Images />
-                </Paper>
-              </Grid>
-              {/* Recent Orders */}
-              <Grid item xs={12}>
-                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'row' }}>
                   <Calendar />
                 </Paper>
-              </Grid>
-            </Grid>
+            </Container>
           </Container>
         </Box>
       </Box>

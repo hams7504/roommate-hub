@@ -86,13 +86,10 @@ export const PriceSplit = () => {
 
     return (
         <div id="outer">
-            <div id="navbar" >
-            </div>
             <div id="contents">
                 <div id="header">
                     <h1>Ingredients</h1>
                 </div>
-
 
                 <table id="ingredientsTable" className='tablerow'>
                     <tbody className='flexbox colbox'>
